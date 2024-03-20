@@ -1,13 +1,13 @@
-import React from "react";
+import Banner from '@/components/banner';
+import PageWrapper from '@/layout';
+import React from 'react';
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24`}
-    >
-      <section className="">
-        <p>Hello Assessment</p>
-      </section>
-    </main>
+    <PageWrapper>
+      <div className='font-jost'>
+        <Banner />
+      </div>
+    </PageWrapper>
   );
 }

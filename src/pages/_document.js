@@ -1,10 +1,17 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import React from 'react';
+import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang='en'>
       <Head />
-      <body>
+      <body
+        style={{
+          margin: 0,
+          padding: 0,
+          boxSizing: 'border-box',
+        }}
+      >
         <Main />
         <NextScript />
       </body>
