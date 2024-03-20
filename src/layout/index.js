@@ -20,7 +20,7 @@ function PageWrapper({ children }) {
 }
 
 PageWrapper.propTypes = {
-  children: PropTypes.elementType.isRequired,
+  children: PropTypes.any.isRequired,
 };
 
 export default PageWrapper;
