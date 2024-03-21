@@ -7,7 +7,7 @@ import BannerPill2 from '/public/assets/EBannerBlack.webp';
 
 function Banner() {
   return (
-    <div className='relative flex flex-col items-center justify-end w-full h-[78vh]'>
+    <div className='relative flex flex-col items-center justify-end top-0 w-full h-[80vh]'>
       <Image
         src={BannerImage}
         alt='Banner Image'
@@ -31,7 +31,7 @@ function Banner() {
                   className='object-cover'
                 />
               </div>
-              <p className=' text-white text-[16px] font-[300] w-2/3'>
+              <p className='font-poppins text-white text-[15px] font-[300] w-[70%]'>
                 Carpe Diem Pension, a blockchain-based retirement fund, offers
                 permanent payouts through CDP deposits, with a 4.32% annual
                 inflation claimable by depositors.
@@ -60,7 +60,7 @@ function Banner() {
           </div>
         </div>
 
-        <div className='z-[1] w-full flex gap-2 px-20 pb-2'>
+        <div className='z-[1] text-[15px] font-jost w-full flex gap-2 px-20 pb-2'>
           <p className='text-white opacity-40'>QuillAudits</p>
           <span className='text-white opacity-40'>{`-->`}</span>
           <p className='text-white opacity-40'>Resources</p>

@@ -7,8 +7,10 @@ import { FaChevronDown } from 'react-icons/fa6';
 
 function Navbar({ NavTabs }) {
   return (
-    <div className='relative flex w-full items-center justify-center'>
-      <div className='flex items-center fixed top-2 z-[1] justify-between w-full max-w-[1350px] gap-20'>
+    <div
+      className='relative flex w-full items-center justify-center'
+    >
+      <div className='flex pt-3 items-center static z-[1] justify-between w-full max-w-[1350px] gap-20'>
         <div className='relative flex w-[300px] h-14'>
           <Image src={logo} fill alt='Logo' className='object-contain' />
         </div>

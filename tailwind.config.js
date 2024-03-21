@@ -16,6 +16,7 @@ module.exports = {
         roboto: ['Roboto', 'sans-serif'],
         jost: ['Jost', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
       },
     },
   },
