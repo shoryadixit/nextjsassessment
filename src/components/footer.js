@@ -18,7 +18,7 @@ import { SiMedium } from 'react-icons/si';
 
 function Footer() {
   return (
-    <div className='relative px-[150px] py-8'>
+    <div className='relative px-20 lg:px-[150px] py-8'>
       <Image
         src={BannerImage}
         alt='Banner Image'
@@ -38,8 +38,33 @@ function Footer() {
           />
         </div>
 
+        {/* Buttons */}
+        <div className='flex lg:hidden gap-4'>
+          <div className='flex w-full justify-between gap-4'>
+            {[
+              'Refer-Earn-Secure',
+              'WAGSI Grants',
+              'Ambassador Program',
+              'Partnership Program',
+            ].map((item, index) => (
+              <div
+                key={index}
+                className='flex px-3 lg:px-8 py-2 rounded-[4.5px] w-full whitespace-nowrap'
+                style={{
+                  background:
+                    'linear-gradient(267.25deg, #7184FD 20%, #3F7AF0 50%, #4F37EE 100%)',
+                }}
+              >
+                <button className='font-jost w-full flex justify-center text-center font-[300] lg:text-[16px] text-white'>
+                  <p className='lg:text-[16px] text-[14px] tracking-wide'>{item}</p>
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Footer Sections */}
-        <div className='flex'>
+        <div className='flex flex-col-reverse gap-8 lg:gap-0 lg:flex-row'>
           {/* More About Section */}
           <div className='flex justify-between w-full gap-20'>
             {/* More About Section */}
@@ -103,7 +128,7 @@ function Footer() {
             </div>
 
             {/* Audit Services */}
-            <div className='text-white flex w-full flex-col gap-4'>
+            <div className='text-white hidden lg:flex w-full flex-col gap-4'>
               <h1 className='text-[19px] font-[400] font-jost flex flex-col w-fit'>
                 Audit Services
                 <div className='bg-blue-500 flex w-full h-[2px] rounded-[18px]' />
@@ -125,12 +150,57 @@ function Footer() {
                 <p>Starknet Audit</p>
               </div>
             </div>
+
+            {/* Quick Links */}
+            <div className='text-white w-full flex lg:hidden flex-col gap-4'>
+              <h1 className='text-[19px] font-[400] font-jost flex flex-col w-fit'>
+                Quick Links
+                <div className='bg-blue-500 flex w-full h-[2px] rounded-[18px]' />
+              </h1>
+
+              <div className='text-[15px] font-[400] font-jost flex flex-col gap-3'>
+                <p>Pricing</p>
+                <p>Audit Process</p>
+                <p>Our Audits</p>
+                <p>Testimonials</p>
+                <p>Security Synopsis</p>
+                <p>Blog</p>
+                <p>Clients</p>
+                <p>
+                  Careers<span>Hiring</span>
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Links Section */}
           <div className='flex w-full justify-between flex-col'>
             {/* Links */}
-            <div className='flex justify-around w-full'>
+            <div className='flex justify-between lg:justify-around w-full'>
+              {/* Audit Services */}
+              <div className='text-white flex lg:hidden flex-col gap-4'>
+                <h1 className='text-[19px] font-[400] font-jost flex flex-col w-fit'>
+                  Audit Services
+                  <div className='bg-blue-500 flex w-full h-[2px] rounded-[18px]' />
+                </h1>
+
+                <div className='text-[15px] font-[400] font-jost flex flex-col gap-3'>
+                  <p>Ethereum Audit</p>
+                  <p>Polygon Audit</p>
+                  <p>BSC Audit</p>
+                  <p>Solana Audit</p>
+                  <p>NEAR Audit</p>
+                  <p>Algorand Audit</p>
+                  <p>Tezos Audit</p>
+                  <p>Hyperledger Fabric Audit</p>
+                  <p>L1 Audit</p>
+                  <p>Polkadot Audit</p>
+                  <p>Wallet Audit</p>
+                  <p>ZkSync Audit</p>
+                  <p>Starknet Audit</p>
+                </div>
+              </div>
+
               {/* Quill Ecosystem */}
               <div className='text-white flex flex-col gap-4'>
                 <h1 className='text-[19px] font-[400] font-jost flex flex-col w-fit'>
@@ -148,7 +218,6 @@ function Footer() {
                   <p>Explore All Tools</p>
                 </div>
               </div>
-
               {/* Other Services */}
               <div className='text-white flex flex-col gap-4'>
                 <h1 className='text-[19px] font-[400] font-jost flex flex-col w-fit'>
@@ -169,7 +238,7 @@ function Footer() {
               </div>
 
               {/* Quick Links */}
-              <div className='text-white flex flex-col gap-4'>
+              <div className='text-white hidden lg:flex flex-col gap-4'>
                 <h1 className='text-[19px] font-[400] font-jost flex flex-col w-fit'>
                   Quick Links
                   <div className='bg-blue-500 flex w-full h-[2px] rounded-[18px]' />
@@ -191,7 +260,7 @@ function Footer() {
             </div>
 
             {/* Buttons */}
-            <div className='flex flex-col gap-4'>
+            <div className='hidden lg:flex flex-col gap-4'>
               <div className='text-white flex flex-col gap-4'>
                 <h1 className='text-[19px] font-[400] font-jost flex flex-col w-fit'>
                   Our Programmes
@@ -242,7 +311,7 @@ function Footer() {
           </div>
 
           {/* Logos */}
-          <div className='flex w-full text-[28px] items-center gap-8 justify-end text-white'>
+          <div className='flex w-full text-[28px] items-center gap-4 lg:gap-8 justify-end text-white'>
             <FaXTwitter className='text-[23px]' />
             <IoLogoLinkedin className='text-[23px]' />
             <Image

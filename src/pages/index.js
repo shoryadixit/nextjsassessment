@@ -16,49 +16,53 @@ export default function Home() {
       {/* Content Seciton */}
       <div className='z-[1] flex-col flex w-full items-center justify-center'>
         {/* Before After Section */}
-        <div className='flex gap-4 max-w-[900px] py-20'>
+        <div className='flex gap-14 relative lg:gap-4 justify-between h-[385px] w-full lg:max-w-[900px] px-14 lg:px-0 py-14'>
           {/* Before */}
-          <div className='flex flex-col gap-4'>
+          <div className='flex flex-col w-full gap-4 pt-8 h-full'>
             <h4
               className='px-1 text-[20p] font-[700] bg-rose-300 ring-1'
               style={{ boxShadow: 'rgb(0, 0, 0, 0.2) 0px 1.5px 0px 0px inset' }}
             >
               Before QuillAudits
             </h4>
-            <p className='font-poppins text-[16px] font-[300]'>
-              Exploits like reentrancy and front-running can let attackers
-              withdraw extra funds and manipulate transaction timing for unfair
-              gains
-            </p>
-            <p className='font-poppins text-[16px] font-[300]'>
-              {`Vulnerabilities could allow users to mint CDP tokens or pension
+            <div className='flex justify-between flex-col h-full'>
+              <p className='font-poppins text-[16px] font-[300]'>
+                Exploits like reentrancy and front-running can let attackers
+                withdraw extra funds and manipulate transaction timing for
+                unfair gains
+              </p>
+              <p className='font-poppins text-[16px] font-[300]'>
+                {`Vulnerabilities could allow users to mint CDP tokens or pension
               shares indefinitely, disrupting the system's economic balance.`}
-            </p>
+              </p>
+            </div>
           </div>
 
-          <div className='w-[3px] rounded-sm mx-12 bg-black bg-opacity-10 h-full' />
+          <div className='w-[3px] hidden lg:flex rounded-sm p-auto mx-20 bg-black bg-opacity-10 h-[290px]' />
+
           {/* After */}
-          <div className='flex flex-col gap-4'>
+          <div className='flex flex-col w-full gap-4 pt-8 h-full'>
             <h4
               className='px-1 text-[20p] font-[700] bg-blue-300 ring-1'
               style={{ boxShadow: 'rgb(0, 0, 0, 0.2) 0px 1.5px 0px 0px inset' }}
             >
               After QuillAudits
             </h4>
-            <p className='font-poppins text-[16px] font-[300]'>
-              Exploits like reentrancy and front-running can let attackers
-              withdraw extra funds and manipulate transaction timing for unfair
-              gains
-            </p>
-            <p className='font-poppins text-[16px] font-[300]'>
-              {`Vulnerabilities could allow users to mint CDP tokens or pension
-              shares indefinitely, disrupting the system's economic balance.`}
-            </p>
+            <div className='flex justify-between flex-col h-full'>
+              <p className='font-poppins text-[16px] font-[300]'>
+                Implementation of reentrancy protection mechanisms.
+              </p>
+              <p className='font-poppins text-[16px] font-[300]'>
+                Ensure precision in decimal handling with standard libraries,
+                recalculate accurately, fix logic errors, and secure referral
+                systems against exploitation.
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Request Button */}
-        <div className='flex flex-col items-center text-center justify-center max-w-[800px] w-full gap-4'>
+        <div className='flex flex-col items-center text-center justify-center px-14 lg:px-0 lg:max-w-[800px] w-full gap-4'>
           <h2 className='text-blue-900 font-jost text-[36px] font-[600]'>
             See how QuillAudits is a trusted partner in 1000+ Audit stories
           </h2>
@@ -70,14 +74,14 @@ export default function Home() {
                 'linear-gradient(90.3deg, #4D3DEE -10.68%, #457BF2 47.02%, #5E80F8 103.52%)',
             }}
           >
-            <button className='font-jost font-[400] text-[20px] text-white'>
+            <button className='font-jost font-[400] text-[18px] lg:text-[20px] text-white'>
               Request An Audit
             </button>
           </div>
         </div>
 
-        <div className='max-w-[1250px] py-14 px-20 z-[1] items-start gap-6 relative flex flex-col'>
-          <div className='absolute right-0 top-28 flex flex-col gap-3 shadow-md ring-1 ring-[linear-gradient(180deg, #7184FD 0%, #2D83EE 100%)] rounded-[6px] px-6 w-[340px] py-5'>
+        <div className='lg:max-w-[1250px] py-14 px-14 lg:px-20 z-[1] items-start gap-6 relative flex flex-col'>
+          <div className='absolute right-10 lg:right-0 top-28 flex flex-col gap-3 shadow-md ring-1 ring-[linear-gradient(180deg, #7184FD 0%, #2D83EE 100%)] rounded-[6px] px-6  w-[250px] lg:w-[340px] py-5'>
             <div>
               <h4 className='text-[14px] font-[300] text-gray-500'>
                 Headquarters
@@ -89,6 +93,7 @@ export default function Home() {
               <p className='text-[16px] font[500]'>Pulse Blockchain</p>
             </div>
           </div>
+
           <p className='font-poppins font-[300] text-[18px] w-7/12'>
             Carpe Diem Pension, on Pulse blockchain, redefines retirement with a
             self-managed, inclusive, globally portable fund. Unique for its

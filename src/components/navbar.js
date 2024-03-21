@@ -1,20 +1,31 @@
 import Image from 'next/image';
 import React from 'react';
 import logo from '/public/assets/logo.svg';
+import MobileLogo from '/public/assets/mobileLogo.svg';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
 import { FaChevronDown } from 'react-icons/fa6';
+import { LuMenu } from 'react-icons/lu';
 
 function Navbar({ NavTabs }) {
   return (
     <div
       className='relative flex w-full items-center justify-center'
+      style={{
+        background:
+          'linear-gradient(90.3deg, #2B4D93 -10.68%, #0E205B 27.98%, #162867 55.94%, #323A87 103.52%)',
+      }}
     >
-      <div className='flex pt-3 items-center static z-[1] justify-between w-full max-w-[1350px] gap-20'>
-        <div className='relative flex w-[300px] h-14'>
+      <div className='flex py-3  px-10 items-center static z-[1] lg:max-w-[1350px] justify-between w-full gap-20'>
+        <div className='relative hidden lg:flex w-[300px] h-14'>
           <Image src={logo} fill alt='Logo' className='object-contain' />
         </div>
-        <div className='flex items-center justify-between w-full gap-6'>
+
+        <div className='relative flex lg:hidden w-[50px] h-14'>
+          <Image src={MobileLogo} fill alt='Logo' className='object-contain' />
+        </div>
+
+        <div className='hidden lg:flex items-center justify-between w-full gap-6'>
           {Array.isArray(NavTabs) &&
             NavTabs.map((item) => (
               <div
@@ -37,6 +48,8 @@ function Navbar({ NavTabs }) {
             Request An Audit
           </button>
         </div>
+
+        <LuMenu color='#fff' className='flex lg:hidden text-[25px]' />
       </div>
       <div className='flex w-full absolute z-[1] top-20 h-[2px] max-w-[1350px] bg-white bg-opacity-10' />
     </div>
