@@ -17,8 +17,8 @@ function Banner() {
       {/* Banner */}
       <div className='z-[1] flex flex-col gap-8 lg:gap-10 lg:max-w-[1250px]'>
         <div className='flex flex-col sm:flex-row w-full z-[1] gap-14 sm:gap-8 sm:px-14 lg:px-20'>
-          <div className='flex flex-col gap-4'>
-            <div className='px-4 flex w-fit font-jost text-[17px] font-[400] text-white'>
+          <div className='flex w-full flex-col gap-4'>
+            <div className='px-4 flex sm:hidden w-fit font-jost text-[17px] font-[400] text-white'>
               <p className='flex w-fit flex-col'>
                 Case Studies
                 <span className='bg-blue-500 flex w-[85%] h-[2.6px] rounded-[18px]' />

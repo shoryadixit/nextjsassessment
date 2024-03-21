@@ -542,7 +542,7 @@ export default function Home() {
                   TEAM
                 </p>
               </div>
-              <div className='bg-blue-700 w-[150px] h-[150px] overflow-hidden lg:w-[180px] lg:h-[180px] rounded-[9.6px] absolute left-4 -bottom-10 sm:right-5 sm:-bottom-8 lg:right-20 lg:-bottom-12'>
+              <div className='bg-blue-700 w-[150px] h-[150px] overflow-hidden lg:w-[180px] lg:h-[180px] rounded-[9.6px] absolute left-4 sm:left-auto -bottom-10 sm:right-5 sm:-bottom-8 lg:right-20 lg:-bottom-12'>
                 <Image
                   src={CardImage}
                   alt='Card Image'
@@ -551,7 +551,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className='flex gap-2 justify-end px-8 sm:px-10 lg:px-14 py-3 lg:py-5'>
+            <div className='flex gap-2 justify-end sm:justify-start px-8 sm:px-10 lg:px-14 py-3 lg:py-5'>
               {[...Array(5)].map((_, index) => (
                 <Image
                   src={Star}
