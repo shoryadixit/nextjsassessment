@@ -17,51 +17,65 @@ export default function Home() {
       {/* Content Seciton */}
       <div className='z-[1] flex-col flex w-full items-center justify-center'>
         {/* Before After Section */}
-        <div className='flex gap-4 relative lg:gap-4 items-center justify-between w-full lg:max-w-[900px] px-14 lg:px-0 py-20'>
+        <div className='flex flex-col sm:flex-row relative gap-14 sm:gap-4 items-center justify-between w-full lg:max-w-[900px] px-10 sm:px-14 lg:px-0 py-20'>
           {/* Before */}
           <div className='flex flex-col gap-4'>
             <h4
-              className='px-1 text-[20p] font-[700] bg-rose-300 ring-1'
+              className='px-1 text-[20px] font-[700] bg-rose-300 ring-1'
               style={{ boxShadow: 'rgb(0, 0, 0, 0.2) 0px 1.5px 0px 0px inset' }}
             >
               Before QuillAudits
             </h4>
-            <p className='font-poppins text-[16px] font-[300]'>
+            <p className='font-poppins text-[18px] sm:text-[16px] font-[300]'>
               Exploits like reentrancy and front-running can let attackers
               withdraw extra funds and manipulate transaction timing for unfair
               gains
             </p>
-            <p className='font-poppins text-[16px] font-[300]'>
+            <p className='font-poppins text-[18px] sm:text-[16px] font-[300]'>
               {`Vulnerabilities could allow users to mint CDP tokens or pension
               shares indefinitely, disrupting the system's economic balance.`}
             </p>
           </div>
 
-          <div className='w-[3px] rounded-sm p-auto mx-14 bg-black bg-opacity-10 h-[270px]' />
+          <div className='w-[3px] hidden sm:flex rounded-sm p-auto mx-14 bg-black bg-opacity-10 h-[270px]' />
 
           {/* After */}
           <div className='flex flex-col gap-4'>
             <h4
-              className='px-1 text-[20p] font-[700] bg-blue-300 ring-1'
+              className='px-1 text-[20px] font-[700] bg-blue-300 ring-1'
               style={{ boxShadow: 'rgb(0, 0, 0, 0.2) 0px 1.5px 0px 0px inset' }}
             >
               After QuillAudits
             </h4>
-            <p className='font-poppins text-[16px] font-[300]'>
-              Exploits like reentrancy and front-running can let attackers
-              withdraw extra funds and manipulate transaction timing for unfair
-              gains
+            <p className='font-poppins text-[18px] sm:text-[16px] font-[300]'>
+              Implementation of reentrancy protection mechanisms.
             </p>
-            <p className='font-poppins text-[16px] font-[300]'>
-              {`Vulnerabilities could allow users to mint CDP tokens or pension
-              shares indefinitely, disrupting the system's economic balance.`}
+            <p className='font-poppins text-[18px] sm:text-[16px] font-[300]'>
+              Ensure precision in decimal handling with standard libraries,
+              recalculate accurately, fix logic errors, and secure referral
+              systems against exploitation.
             </p>
           </div>
         </div>
 
+        <div className='px-10 flex w-full'>
+          <div className='flex sm:hidden flex-col gap-3 shadow-md ring-1 ring-[linear-gradient(180deg, #7184FD 0%, #2D83EE 100%)] rounded-[6px] px-6 w-full sm:w-[250px] lg:w-[340px] py-5'>
+            <div>
+              <h4 className='text-[14px] font-[300] text-gray-500'>
+                Headquarters
+              </h4>
+              <p className='text-[16px] font[500]'>Switzerland</p>
+            </div>
+            <div>
+              <h4 className='text-[14px] font-[300] text-gray-500'>Chain</h4>
+              <p className='text-[16px] font[500]'>Pulse Blockchain</p>
+            </div>
+          </div>
+        </div>
+
         {/* Request Button */}
-        <div className='flex flex-col items-center text-center justify-center max-w-[800px] w-full gap-4'>
-          <h2 className='text-blue-900 font-jost text-[36px] font-[600]'>
+        <div className='flex flex-col items-center text-center justify-center max-w-[800px] px-10 sm:px-0 w-full gap-4'>
+          <h2 className='text-blue-900 font-jost text-[33px] sm:text-[36px] font-[600]'>
             See how QuillAudits is a trusted partner in 1000+ Audit stories
           </h2>
 
@@ -78,8 +92,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='max-w-[1250px] py-14 px-20 z-[1] items-start gap-6 relative flex flex-col'>
-          <div className='absolute lg:right-0 lg:top-28 right-10 top-20 flex flex-col gap-3 shadow-md ring-1 ring-[linear-gradient(180deg, #7184FD 0%, #2D83EE 100%)] rounded-[6px] px-6 w-[250px] lg:w-[340px] py-5'>
+        <div className='max-w-[1250px] py-14 px-6 sm:px-20 z-[1] items-start gap-6 relative flex flex-col'>
+          <div className='absolute lg:right-0 lg:top-28 right-10 top-20 hidden sm:flex flex-col gap-3 shadow-md ring-1 ring-[linear-gradient(180deg, #7184FD 0%, #2D83EE 100%)] rounded-[6px] px-6 w-[250px] lg:w-[340px] py-5'>
             <div>
               <h4 className='text-[14px] font-[300] text-gray-500'>
                 Headquarters
@@ -91,15 +105,17 @@ export default function Home() {
               <p className='text-[16px] font[500]'>Pulse Blockchain</p>
             </div>
           </div>
-          <p className='font-poppins font-[300] text-[18px] w-7/12'>
+
+          <p className='font-poppins font-[300] text-[18px] w-full sm:w-7/12'>
             Carpe Diem Pension, on Pulse blockchain, redefines retirement with a
             self-managed, inclusive, globally portable fund. Unique for its
             token burn mechanism, it ensures a sustainable 4.32% inflation
             payout. With $143.11k and 41.06% of CDP already burned, it serves 35
             users globally.
           </p>
-          <div className='w-7/12 flex flex-col gap-6'>
-            <h2 className='z-[1] font-jost font-[700] text-[34px]'>{`CarpeDiem Pension's Flexible, Blockchain-Enabled Future`}</h2>
+
+          <div className='w-full sm:w-7/12 flex flex-col gap-6'>
+            <h2 className='z-[1] font-jost font-[700] text-[32px] sm:text-[34px] leading-snug sm:leading-normal'>{`CarpeDiem Pension's Flexible, Blockchain-Enabled Future`}</h2>
             <p className='font-poppins font-[300] text-[18px]'>
               CarpeDiem Pension redefines retirement planning with a unique
               approach that deviates from traditional pension funds. With no
@@ -120,8 +136,8 @@ export default function Home() {
             <Image src={Content1} alt='content' width={780} height={100} />
           </div>
 
-          <div className='w-7/12 flex flex-col gap-6 mt-2'>
-            <h2 className='z-[1] font-jost font-[700] text-[34px]'>{`CarpeDiem Pension's Challenges: Enhancing Security Against Reentrancy, Front-Running, and Infinite Minting`}</h2>
+          <div className='w-full sm:w-7/12 flex flex-col gap-6 mt-2'>
+            <h2 className='z-[1] font-jost font-[700] text-[32px] sm:text-[34px] leading-snug sm:leading-normal'>{`CarpeDiem Pension's Challenges: Enhancing Security Against Reentrancy, Front-Running, and Infinite Minting`}</h2>
             <p className='font-poppins font-[300] text-[18px]'>
               CarpeDiem Pension confronts critical security challenges,
               including the risks of reentrancy and front-running
@@ -138,8 +154,8 @@ export default function Home() {
             <Image src={Content2} alt='content' width={650} height={100} />
           </div>
 
-          <div className='w-7/12 flex flex-col gap-6 mt-2'>
-            <h2 className='z-[1] font-jost font-[700] text-[34px]'>{`CarpeDiem Pension's Journey Through our Audit Process`}</h2>
+          <div className='w-full sm:w-7/12 flex flex-col gap-6 mt-2'>
+            <h2 className='z-[1] font-jost font-[700] text-[32px] sm:text-[34px] leading-snug sm:leading-normal'>{`CarpeDiem Pension's Journey Through our Audit Process`}</h2>
             <div className='flex flex-col gap-5'>
               <p className='font-[500] text-[24px]'>
                 1. Information Gathering:
@@ -177,7 +193,7 @@ export default function Home() {
                 </p>
               </div>
               <div className='flex flex-col gap-3'>
-                <ul className='flex gap-4 font-poppins pl-16'>
+                <ul className='flex gap-4 font-poppins pl-6 sm:pl-16'>
                   <GoDot
                     className='font-sans flex w-fit h-fit pt-1'
                     fontSize={'35px'}
@@ -192,7 +208,7 @@ export default function Home() {
                   </p>
                 </ul>
 
-                <ul className='flex gap-4 font-poppins pl-16'>
+                <ul className='flex gap-4 font-poppins pl-6 sm:pl-16'>
                   <GoDot
                     className='font-sans flex w-fit h-fit pt-1'
                     fontSize={'22px'}
@@ -204,7 +220,7 @@ export default function Home() {
                   </p>
                 </ul>
 
-                <ul className='flex gap-4 font-poppins pl-16'>
+                <ul className='flex gap-4 font-poppins pl-6 sm:pl-16'>
                   <GoDot
                     className='font-sans flex w-fit h-fit pt-1'
                     fontSize={'35px'}
@@ -218,7 +234,7 @@ export default function Home() {
                   </p>
                 </ul>
 
-                <ul className='flex gap-4 font-poppins pl-16'>
+                <ul className='flex gap-4 font-poppins pl-6 sm:pl-16'>
                   <GoDot
                     className='font-sans flex w-fit h-fit pt-1'
                     fontSize={'35px'}
@@ -327,8 +343,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className='w-7/12 flex flex-col gap-6 mt-2'>
-            <h2 className='z-[1] font-jost font-[700] text-[34px]'>
+          <div className='w-full sm:w-7/12 flex flex-col gap-6 mt-2'>
+            <h2 className='z-[1] font-jost font-[700] text-[32px] sm:text-[34px] leading-snug sm:leading-normal'>
               {`QuillAudits' Strategic Approach to CDP Security Audits`}
             </h2>
             <p className='font-poppins font-[300] text-[18px]'>
@@ -342,8 +358,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='w-7/12 flex flex-col gap-6 mt-2'>
-            <h2 className='z-[1] font-jost font-[700] text-[34px]'>
+          <div className='w-full sm:w-7/12 flex flex-col gap-6 mt-2'>
+            <h2 className='z-[1] font-jost font-[700] text-[30px] sm:text-[34px] leading-snug sm:leading-normal'>
               Comprehensive Audit Discoveries and Remediation Strategies
             </h2>
             <p className='font-poppins font-[300] text-[18px]'>
@@ -431,8 +447,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className='w-7/12 flex flex-col gap-6 mt-2'>
-            <h2 className='z-[1] font-jost font-[700] text-[34px]'>
+          <div className='w-full sm:w-7/12 flex flex-col gap-6 mt-2'>
+            <h2 className='z-[1] font-jost font-[700] text-[32px] sm:text-[34px] leading-snug sm:leading-normal'>
               Remediation & Impact:
             </h2>
             <p className='font-poppins font-[300] text-[18px]'>
@@ -498,7 +514,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='flex w-7/12 relative flex-col h-[380px] lg:h-[420px] shadow-md rounded-t-[4.8px] overflow-hidden'>
+          <div className='flex w-full sm:w-7/12 relative flex-col h-[380px] lg:h-[420px] shadow-md rounded-t-[4.8px] overflow-hidden'>
             <BiSolidQuoteLeft
               className='absolute top-0 left-0 z-[1] text-[32px] m-3'
               color='#fff'
@@ -512,15 +528,21 @@ export default function Home() {
                   'linear-gradient(90.3deg, #2B4D93 -10.68%, #0E205B 27.98%, #162867 55.94%, #323A87 103.52%)',
               }}
             >
-              <div className='font-jost pl-10 lg:pl-16 pb-6 text-white'>
-                <p className='font-[500] text-[24px] lg:text-[28px]'>
+              <div className='font-jost pl-[52%] sm:pl-10 lg:pl-16 pb-6 text-white'>
+                <p className='hidden sm:block font-[500] text-[24px] lg:text-[28px]'>
                   Sally Radley
                 </p>
-                <p className='text-[16px] lg:text-[19px] font-[300]'>
+                <p className='block sm:hidden font-[500] text-[30px] lg:text-[28px]'>
+                  Carpediem
+                </p>
+                <p className='hidden sm:block text-[16px] lg:text-[19px] font-[300]'>
                   WebGFi - CEO
                 </p>
+                <p className='block sm:hidden text-[20px] font-[300]'>
+                  TEAM
+                </p>
               </div>
-              <div className='bg-blue-700 w-[140px] h-[140px] overflow-hidden lg:w-[180px] lg:h-[180px] rounded-[9.6px] absolute right-5 -bottom-8 lg:right-20 lg:-bottom-12'>
+              <div className='bg-blue-700 w-[150px] h-[150px] overflow-hidden lg:w-[180px] lg:h-[180px] rounded-[9.6px] absolute left-4 -bottom-10 sm:right-5 sm:-bottom-8 lg:right-20 lg:-bottom-12'>
                 <Image
                   src={CardImage}
                   alt='Card Image'
@@ -529,7 +551,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className='flex gap-2 px-10 lg:px-14 py-3 lg:py-5'>
+            <div className='flex gap-2 justify-end px-8 sm:px-10 lg:px-14 py-3 lg:py-5'>
               {[...Array(5)].map((_, index) => (
                 <Image
                   src={Star}
@@ -542,7 +564,7 @@ export default function Home() {
               ))}
             </div>
 
-            <div className='font-jost px-10 lg:px-14 py-4 lg:py-5 font-[300] text-[16px] lg:w-[85%]'>
+            <div className='font-jost px-5 sm:px-10 lg:px-14 py-4 lg:py-5 font-[300] text-[16px] lg:w-[85%]'>
               “It felt like the auditing team was available within a short
               timeframe, which was excellent. The auditing process looked
               thorough, and I really appreciate the fact that you took time to
@@ -559,8 +581,8 @@ export default function Home() {
               'linear-gradient(89.44deg, #EDF2FE -2.02%, rgba(217, 217, 217, 0) 103.68%)',
           }}
         >
-          <div className='max-w-[1250px] px-20 gap-2 lg:gap-4 flex justify-between items-center'>
-            <div className='flex w-2/3 lg:w-2/3 gap-5 flex-col'>
+          <div className='max-w-[1250px] sm:w-full py-6 px-6 sm:px-20 gap-2 lg:gap-4 flex flex-col sm:flex-row justify-between items-center'>
+            <div className='flex w-full sm:w-2/3 lg:w-2/3 gap-5 flex-col'>
               <h2 className='font-sans text-[18px] lg:text-[22px] font-[700] text-blue-500'>
                 NEWSLETTER
               </h2>
@@ -573,7 +595,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className='flex w-5/6 h-fit py-12 items-center flex-col'>
+            <div className='flex w-full sm:w-5/6 h-fit py-12 items-center flex-col'>
               <Image
                 src={NewsLetterPicture}
                 alt='News Letter Image'

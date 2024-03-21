@@ -16,12 +16,12 @@ function Navbar({ NavTabs }) {
           'linear-gradient(90.3deg, #2B4D93 -10.68%, #0E205B 27.98%, #162867 55.94%, #323A87 103.52%)',
       }}
     >
-      <div className='flex py-3  px-10 items-center static z-[1] lg:max-w-[1350px] justify-between w-full gap-20'>
+      <div className='flex py-3 px-4 sm:px-10 items-center static z-[1] lg:max-w-[1350px] justify-between w-full gap-20'>
         <div className='relative hidden lg:flex w-[300px] h-14'>
           <Image src={logo} fill alt='Logo' className='object-contain' />
         </div>
 
-        <div className='relative flex lg:hidden w-[50px] h-14'>
+        <div className='relative flex lg:hidden w-[35px] sm:w-[50px] h-14'>
           <Image src={MobileLogo} fill alt='Logo' className='object-contain' />
         </div>
 
@@ -43,15 +43,16 @@ function Navbar({ NavTabs }) {
               </div>
             ))}
         </div>
+        
         <div className='flex bg-gradient-to-br from-blue-500 via-blue-600 px-5 py-2 rounded-[8px] to-purple-700 w-fit whitespace-nowrap'>
-          <button className='font-jost font-[400] text-[20px] text-white'>
+          <button className='font-jost font-[400] text-[14px] sm:text-[20px] text-white'>
             Request An Audit
           </button>
         </div>
 
         <LuMenu color='#fff' className='flex lg:hidden text-[25px]' />
       </div>
-      <div className='flex w-full absolute z-[1] top-20 h-[2px] max-w-[1350px] bg-white bg-opacity-10' />
+      <div className='hidden sm:flex w-full absolute z-[1] top-20 h-[2px] max-w-[1350px] bg-white bg-opacity-10' />
     </div>
   );
 }
