@@ -9,8 +9,23 @@ import { BiSolidQuoteLeft, BiSolidQuoteRight } from 'react-icons/bi';
 import Star from '/public/assets/star.svg';
 import NewsLetterPicture from '/public/assets/NewLetterPicture.webp';
 import CardImage from '/public/assets/CardImage.webp';
+import { UAParser } from 'ua-parser-js';
+import determineDeviceType from '@/utils/determinDeviceType';
+import PropTypes from 'prop-types';
 
-export default function Home() {
+export async function getServerSideProps({ req }) {
+  const userAgent = req.headers['user-agent'];
+  const parser = new UAParser();
+  const parsedUserAgent = parser.setUA(userAgent).getResult();
+  const deviceType = determineDeviceType(parsedUserAgent);
+  return {
+    props: {
+      deviceType,
+    },
+  };
+}
+
+export default function Home({ deviceType }) {
   return (
     <PageWrapper>
       <Banner />
@@ -58,8 +73,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='px-10 flex w-full'>
-          <div className='flex sm:hidden flex-col gap-3 shadow-md ring-1 ring-[linear-gradient(180deg, #7184FD 0%, #2D83EE 100%)] rounded-[6px] px-6 w-full sm:w-[250px] lg:w-[340px] py-5'>
+        <div className='flex sm:hidden px-10 pb-14 w-full'>
+          <div className='flex-col gap-3 shadow-md ring-1 ring-[linear-gradient(180deg, #7184FD 0%, #2D83EE 100%)] rounded-[6px] px-6 w-full sm:w-[250px] lg:w-[340px] py-5'>
             <div>
               <h4 className='text-[14px] font-[300] text-gray-500'>
                 Headquarters
@@ -80,7 +95,7 @@ export default function Home() {
           </h2>
 
           <div
-            className='flex px-5 py-2 rounded-[8px] w-fit whitespace-nowrap'
+            className='cursor-pointer flex px-5 py-2 rounded-[8px] w-fit whitespace-nowrap'
             style={{
               background:
                 'linear-gradient(90.3deg, #4D3DEE -10.68%, #457BF2 47.02%, #5E80F8 103.52%)',
@@ -499,7 +514,7 @@ export default function Home() {
 
             <p className='font-poppins text-[18px] font-[500]' style={{}}>
               Embed this tweet :-{' '}
-              <span className='font-[300] text-blue-500'>
+              <span className='cursor-pointer font-[300] text-blue-500'>
                 https://x.com/CarpeDiemCDP/ status/1742906560794296402?s=20
               </span>
             </p>
@@ -538,9 +553,7 @@ export default function Home() {
                 <p className='hidden sm:block text-[16px] lg:text-[19px] font-[300]'>
                   WebGFi - CEO
                 </p>
-                <p className='block sm:hidden text-[20px] font-[300]'>
-                  TEAM
-                </p>
+                <p className='block sm:hidden text-[20px] font-[300]'>TEAM</p>
               </div>
               <div className='bg-blue-700 w-[150px] h-[150px] overflow-hidden lg:w-[180px] lg:h-[180px] rounded-[9.6px] absolute left-4 sm:left-auto -bottom-10 sm:right-5 sm:-bottom-8 lg:right-20 lg:-bottom-12'>
                 <Image
@@ -578,11 +591,12 @@ export default function Home() {
           className='flex w-full justify-center'
           style={{
             background:
+              ['tablet', 'desktop'].includes(deviceType) &&
               'linear-gradient(89.44deg, #EDF2FE -2.02%, rgba(217, 217, 217, 0) 103.68%)',
           }}
         >
           <div className='max-w-[1250px] sm:w-full py-6 px-6 sm:px-20 gap-2 lg:gap-4 flex flex-col sm:flex-row justify-between items-center'>
-            <div className='flex w-full sm:w-2/3 lg:w-2/3 gap-5 flex-col'>
+            <div className='hidden sm:flex w-full sm:w-2/3 lg:w-2/3 gap-5 flex-col'>
               <h2 className='font-sans text-[18px] lg:text-[22px] font-[700] text-blue-500'>
                 NEWSLETTER
               </h2>
@@ -595,19 +609,36 @@ export default function Home() {
               </p>
             </div>
 
+            <div className='flex sm:hidden w-full justify-center gap-1 flex-col items-center'>
+              <p className='font-jost text-[16px] font-[300]'>
+                Security First Newsletter by QuillAudits
+              </p>
+              <div className='flex w-[65px] h-[1.5px] bg-blue-600' />
+            </div>
+
             <div className='flex w-full sm:w-5/6 h-fit py-12 items-center flex-col'>
               <Image
                 src={NewsLetterPicture}
                 alt='News Letter Image'
                 className='object-contain'
               />
-              <div className='relative flex items-center w-full px-4 lg:px-10 font-jost font-[300]'>
+
+              <div className='flex sm:hidden py-3'>
+                <p className='px-10 text-[13px] text-center font-[300] font-jost'>
+                  DeFi & NFT Hacks, CTFs, and Blockchain Security Insights
+                  straight to your Inbox. Explore our weekly newsletter:{' '}
+                  <span className='font-[600] text-blue-500'>HashingBits.</span> Stay updated on everything we’re
+                  publishing. Stand a step ahead.
+                </p>
+              </div>
+
+              <div className='relative flex flex-col gap-8 sm:gap-0 sm:flex-row items-center w-full px-4 lg:px-10 font-jost font-[300]'>
                 <input
                   type='text'
-                  className='w-full h-[50px] lg:h-[60px] px-3 shadow-xl rounded-[6px]'
+                  className='w-full h-[50px] lg:h-[60px] ring-[.6px] ring-black sm:ring-0 sm:ring-transparent px-3 shadow-xl rounded-[4px] sm:rounded-[6px]'
                   placeholder='vitalik@ethereum.org'
                 />
-                <div className='absolute right-6 lg:right-12 flex bg-gradient-to-br from-blue-500 via-blue-600 px-6 lg:px-7 py-2 rounded-[8px] to-purple-700 w-fit whitespace-nowrap'>
+                <div className='cursor-pointer sm:absolute right-6 lg:right-12 flex bg-gradient-to-br from-blue-500 via-blue-600 px-8 sm:px-6 lg:px-7 py-2 rounded-[6px] sm:rounded-[8px] to-purple-700 w-fit whitespace-nowrap'>
                   <button className='font-jost font-[400] text-[16px] lg:text-[20px] text-white'>
                     Subscribe
                   </button>
@@ -620,3 +651,7 @@ export default function Home() {
     </PageWrapper>
   );
 }
+
+Home.propTypes = {
+  deviceType: PropTypes.string,
+};
