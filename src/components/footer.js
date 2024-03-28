@@ -271,7 +271,7 @@ function Footer({ deviceType }) {
                 </h1>
               </div>
 
-              <div className='flex w-full justify-between gap-4'>
+              <div className='flex flex-wrap w-full justify-stretch gap-4'>
                 {[
                   'Refer-Earn-Secure',
                   'WAGSI Grants',
@@ -280,14 +280,14 @@ function Footer({ deviceType }) {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className='cursor-pointer flex px-8 py-2 rounded-[4.5px] w-full whitespace-nowrap'
+                    className='cursor-pointer flex py-2 rounded-[4.5px] whitespace-nowrap'
                     style={{
                       background:
                         'linear-gradient(267.25deg, #7184FD 20%, #3F7AF0 50%, #4F37EE 100%)',
                     }}
                   >
-                    <button className='font-jost font-[300] text-[16px] text-white'>
-                      {item}
+                    <button className='font-jost px-4 w-full flex justify-center text-center font-[300] text-[16px] text-white'>
+                      <p className='lg:text-[16px] text-[14px]'>{item}</p>
                     </button>
                   </div>
                 ))}
